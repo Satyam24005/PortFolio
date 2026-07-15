@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Poppins', var(--font-sans);
+  
+  --color-bg-dark: #0B1120;
+  --color-primary-blue: #3B82F6;
+  --color-secondary-cyan: #06B6D4;
+  --color-accent-violet: #8B5CF6;
+  
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-float-medium: float 6s ease-in-out infinite;
+  --animate-float-fast: float 4s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(5deg);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1120;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0B1120;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #0B1120;
+}
+
+/* Background Glowing Orbs */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.15);
+  background: rgba(15, 23, 42, 0.55);
+}
+
+/* Glowing text */
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+.text-glow-violet {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+/* Custom animation extensions */
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
+}
